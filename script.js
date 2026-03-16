@@ -27,3 +27,27 @@ heart.remove()
 },6000)
 
 }
+
+function nextPage(){
+
+localStorage.setItem("playMusic","true")
+
+window.location.href="surprise.html"
+
+}
+
+/* play music when surprise page opens */
+
+window.onload = function(){
+
+if(localStorage.getItem("playMusic") === "true"){
+
+const music = document.getElementById("birthdayMusic")
+
+if(music){
+music.play().catch(()=>{})
+}
+
+}
+
+}
