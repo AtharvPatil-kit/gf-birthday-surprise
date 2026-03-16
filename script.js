@@ -4,50 +4,65 @@ window.location.href="surprise.html"
 
 }
 
-setInterval(createHeart,400)
+/* ---------- FLOATING EMOJI SETTINGS ---------- */
 
-function createHeart(){
+/* Add or remove emojis here whenever you want */
 
-const heart=document.createElement("div")
+const emojis = [
+"💖",
+"❤️",
+"💗",
+"💓",
+"💘",
+"💕",
+"🌸",
+"✨"
+]
 
-heart.classList.add("heart")
+/* Intensity control (90% = very frequent) */
 
-heart.innerHTML="💖"
+const intensity = 90
 
-heart.style.left=Math.random()*100+"vw"
+/* Interval calculation */
 
-heart.style.fontSize=(18+Math.random()*15)+"px"
+const spawnRate = 1000 * (1 - intensity/100)
 
-document.body.appendChild(heart)
+/* Start floating emojis */
+
+setInterval(createFloatingEmoji, spawnRate)
+
+/* ---------- CREATE FLOATING EMOJI ---------- */
+
+function createFloatingEmoji(){
+
+const emoji = document.createElement("div")
+
+emoji.classList.add("heart")
+
+/* Random emoji from list */
+
+emoji.innerHTML = emojis[Math.floor(Math.random()*emojis.length)]
+
+/* Random horizontal position */
+
+emoji.style.left = Math.random()*100 + "vw"
+
+/* Smaller size */
+
+emoji.style.fontSize = (12 + Math.random()*10) + "px"
+
+/* Random animation speed */
+
+emoji.style.animationDuration = (4 + Math.random()*3) + "s"
+
+document.body.appendChild(emoji)
+
+/* Remove after animation */
 
 setTimeout(()=>{
 
-heart.remove()
+emoji.remove()
 
-},6000)
-
-}
-
-function nextPage(){
-
-localStorage.setItem("playMusic","true")
-
-window.location.href="surprise.html"
-
-}
-
-/* play music when surprise page opens */
-
-window.onload = function(){
-
-if(localStorage.getItem("playMusic") === "true"){
-
-const music = document.getElementById("birthdayMusic")
-
-if(music){
-music.play().catch(()=>{})
-}
-
-}
+},7000)
 
 }
