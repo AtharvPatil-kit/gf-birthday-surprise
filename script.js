@@ -10,13 +10,8 @@ window.location.href="surprise.html"
 
 const emojis = [
 "💖",
-"❤️",
-"💗",
-"💓",
-"💘",
-"💕",
 "🌸",
-"✨"
+"💕"
 ]
 
 /* Intensity control (90% = very frequent) */
@@ -25,7 +20,7 @@ const intensity = 90
 
 /* Interval calculation */
 
-const spawnRate = 1000 * (1 - intensity/100)
+const spawnRate = 2800 * (1 - intensity/100)
 
 /* Start floating emojis */
 
