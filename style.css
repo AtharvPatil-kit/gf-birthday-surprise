@@ -1,125 +1,139 @@
 body{
 margin:0;
-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", 
-"Helvetica Neue", Helvetica, Arial, sans-serif;
-text-align:center;
-overflow-x:hidden;
-}
-body{
-margin:0;
-font-family:Poppins;
-text-align:center;
+font-family:'Poppins',sans-serif;
 color:white;
+text-align:center;
 overflow-x:hidden;
 }
 
-/* Landing page */
+/* Aesthetic gradient background */
 
 .landing{
-background: linear-gradient(135deg,#ff758c,#ff7eb3);height:100vh;
+height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
-}
-body{
-background:var(--background-gradient);
-color:white;
+align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
 }
 
-.main-title{
-font-size:60px;
-animation: glow 2s infinite alternate;
+.surprise{
+min-height:100vh;
+padding:30px 15px;
+background:linear-gradient(135deg,#a18cd1,#fbc2eb);
 }
 
-.sub-title{
-font-size:28px;
-margin-top:10px;
-}
+/* Container */
 
-.intro{
-font-size:20px;
+.container{
 max-width:500px;
-margin:auto;
-margin-top:20px;
+padding:20px;
 }
 
-.start-btn{
+/* Romantic heading */
 
-background:var(--primary-color);
-color:white;
-border-radius:50px;
-padding:15px 40px;
+.title{
+font-family:'Great Vibes',cursive;
+font-size:42px;
+margin-bottom:10px;
+}
+
+.subtitle{
 font-size:20px;
-transition:0.3s;
-
+margin-bottom:10px;
 }
 
-.start-btn:hover{
+.message{
+font-size:15px;
+line-height:1.6;
+}
 
-background:var(--secondary-color);
-transform:scale(1.1);
+/* Button */
 
+.btn{
+margin-top:20px;
+padding:10px 25px;
+border:none;
+border-radius:25px;
+background:white;
+color:#ff4d6d;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
 }
 
 /* Surprise page */
 
-.surprise{
-background:linear-gradient(120deg,#ff758c,#ff7eb3);
-min-height:100vh;
-padding-top:60px;
+.birthday{
+font-family:'Great Vibes',cursive;
+font-size:36px;
 }
 
-.birthday-title{
-font-size:55px;
-margin-bottom:20px;
-}
-
-.love-message{
-font-size:22px;
-max-width:600px;
+.love-text{
+font-size:15px;
+max-width:400px;
 margin:auto;
 }
 
-.memory-title{
-margin-top:60px;
-}
-:root{
-
---primary-color:#ff4d6d;
---secondary-color:#ff8fa3;
---accent-color:#ffc2d1;
-
---background-gradient:
-linear-gradient(135deg,#ff4d6d,#ff8fa3,#ffc2d1);
-
-}
-
-.memory-img{
-width:100%;
-border-radius:20px;
+.memory{
 margin-top:30px;
-transition:0.4s;
 }
 
-.memory-img:hover{
-transform:scale(1.1);
+/* Image gallery */
+
+.gallery{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:15px;
 }
 
-@keyframes glow{
-from{ text-shadow:0 0 10px white;}
-to{ text-shadow:0 0 30px pink;}
+.gallery img{
+width:100%;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Floating hearts */
 
 .heart{
 position:fixed;
-bottom:-10px;
-font-size:24px;
-animation: float 6s linear infinite;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
 }
 
 @keyframes float{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-900px);opacity:0;}
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-900px);
+opacity:0;
+}
+
+}
+
+/* Responsive improvement */
+
+@media (min-width:700px){
+
+.gallery{
+flex-direction:row;
+}
+
+.gallery img{
+width:30%;
+}
+
+.title{
+font-size:55px;
+}
+
 }
