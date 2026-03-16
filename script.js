@@ -48,7 +48,7 @@ emoji.style.fontSize = (12 + Math.random()*10) + "px"
 
 /* Random animation speed */
 
-emoji.style.animationDuration = (4 + Math.random()*3) + "s"
+emoji.style.animationDuration = (6 + Math.random()*4) + "s"
 
 document.body.appendChild(emoji)
 
