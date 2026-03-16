@@ -106,6 +106,12 @@ justify-content:center;
 align-items:center;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
+.photo-frame:hover{
+
+transform:scale(1.05);
+transition:0.3s;
+
+}
 
 /* Image inside frame */
 
