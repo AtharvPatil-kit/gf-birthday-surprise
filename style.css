@@ -1,3 +1,5 @@
+/* Global */
+
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
@@ -6,30 +8,50 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* Aesthetic gradient background */
+/* Text readability improvement */
+
+.title,
+.subtitle,
+.message,
+.birthday,
+.love-text,
+.memory{
+color:white;
+text-shadow:0 2px 10px rgba(0,0,0,0.35);
+}
+
+/* Landing page background */
 
 .landing{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+background:linear-gradient(135deg,#ff6a88,#ff99ac,#ffb7c5);
 }
+
+/* Surprise page background */
 
 .surprise{
 min-height:100vh;
 padding:30px 15px;
-background:linear-gradient(135deg,#a18cd1,#fbc2eb);
+background:linear-gradient(135deg,#7f7fd5,#86a8e7,#fbc2eb);
 }
 
-/* Container */
+/* Glass card effect */
 
-.container{
+.container,
+.content{
 max-width:500px;
-padding:20px;
+margin:auto;
+padding:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* Romantic heading */
+/* Romantic headings */
 
 .title{
 font-family:'Great Vibes',cursive;
@@ -47,7 +69,7 @@ font-size:15px;
 line-height:1.6;
 }
 
-/* Button */
+/* Button styling */
 
 .btn{
 margin-top:20px;
@@ -55,17 +77,18 @@ padding:10px 25px;
 border:none;
 border-radius:25px;
 background:white;
-color:#ff4d6d;
+color:#ff3f6c;
 font-weight:600;
 cursor:pointer;
 transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 .btn:hover{
 transform:scale(1.08);
 }
 
-/* Surprise page */
+/* Surprise page headings */
 
 .birthday{
 font-family:'Great Vibes',cursive;
@@ -82,9 +105,7 @@ margin:auto;
 margin-top:30px;
 }
 
-/* Image gallery */
-
-/* Gallery layout */
+/* Image gallery layout */
 
 .gallery{
 display:grid;
@@ -105,7 +126,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:transform 0.3s ease;
 }
+
 /* Image inside frame */
 
 .photo-frame img{
@@ -113,14 +136,14 @@ width:100%;
 height:100%;
 object-fit:contain;
 }
+
+/* Hover animation */
+
 .photo-frame:hover{
-
 transform:scale(1.05);
-transition:0.3s;
-
 }
 
-/* Desktop layout */
+/* Desktop gallery */
 
 @media (min-width:700px){
 
@@ -130,13 +153,7 @@ grid-template-columns:repeat(3,1fr);
 
 }
 
-.gallery img{
-width:100%;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Floating hearts */
+/* Floating hearts animation */
 
 .heart{
 position:fixed;
@@ -159,20 +176,16 @@ opacity:0;
 
 }
 
-/* Responsive improvement */
+/* Responsive improvements */
 
 @media (min-width:700px){
 
-.gallery{
-flex-direction:row;
-}
-
-.gallery img{
-width:30%;
-}
-
 .title{
 font-size:55px;
+}
+
+.birthday{
+font-size:45px;
 }
 
 }
