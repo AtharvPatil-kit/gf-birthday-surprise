@@ -11,7 +11,7 @@ function nextPage() {
 const emojis = [
     "💖",
     "🌸",
-    "💕"
+    "💕"   
 ]
 
 /* Intensity control (90% = very frequent) */
