@@ -1,6 +1,6 @@
-function nextPage(){
+function nextPage() {
 
-window.location.href="surprise.html"
+    window.location.href = "surprise.html"
 
 }
 
@@ -9,9 +9,9 @@ window.location.href="surprise.html"
 /* Add or remove emojis here whenever you want */
 
 const emojis = [
-"💖",
-"🌸",
-"💕"
+    "💖",
+    "🌸",
+    "💕"
 ]
 
 /* Intensity control (90% = very frequent) */
@@ -20,7 +20,7 @@ const intensity = 90
 
 /* Interval calculation */
 
-const spawnRate = 2800 * (1 - intensity/100)
+const spawnRate = 2800 * (1 - intensity / 100)
 
 /* Start floating emojis */
 
@@ -28,36 +28,58 @@ setInterval(createFloatingEmoji, spawnRate)
 
 /* ---------- CREATE FLOATING EMOJI ---------- */
 
-function createFloatingEmoji(){
+function createFloatingEmoji() {
 
-const emoji = document.createElement("div")
+    const emoji = document.createElement("div")
 
-emoji.classList.add("heart")
+    emoji.classList.add("heart")
 
-/* Random emoji from list */
+    /* Random emoji from list */
 
-emoji.innerHTML = emojis[Math.floor(Math.random()*emojis.length)]
+    emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)]
 
-/* Random horizontal position */
+    /* Random horizontal position */
 
-emoji.style.left = Math.random()*100 + "vw"
+    emoji.style.left = Math.random() * 100 + "vw"
 
-/* Smaller size */
+    /* Smaller size */
 
-emoji.style.fontSize = (12 + Math.random()*10) + "px"
+    emoji.style.fontSize = (12 + Math.random() * 10) + "px"
 
-/* Random animation speed */
+    /* Random animation speed */
 
-emoji.style.animationDuration = (6 + Math.random()*4) + "s"
+    emoji.style.animationDuration = (6 + Math.random() * 4) + "s"
 
-document.body.appendChild(emoji)
+    document.body.appendChild(emoji)
 
-/* Remove after animation */
+    /* Remove after animation */
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-emoji.remove()
+        emoji.remove()
 
-},7000)
+    }, 7000)
 
 }
+
+/* ---------- MUSIC AUTOPLAY FIX ---------- */
+
+window.addEventListener("load", function () {
+
+    const music = document.getElementById("birthdayMusic")
+
+    if (!music) return
+
+    // Try autoplay
+    music.play().catch(() => {
+
+        console.log("Autoplay blocked. Waiting for user interaction.")
+
+        // Play on first user interaction
+        document.addEventListener("click", () => {
+            music.play()
+        }, { once: true })
+
+    })
+
+})
