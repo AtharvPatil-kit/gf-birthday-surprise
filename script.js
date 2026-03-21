@@ -66,20 +66,25 @@ function createFloatingEmoji() {
 
 window.addEventListener("load", function () {
 
-    const music = document.getElementById("birthdayMusic")
-
+    const music = document.getElementById("bgMusic")
     if (!music) return
+
+    // Restore last playback time
+    const savedTime = localStorage.getItem("musicTime")
+    if (savedTime) {
+        music.currentTime = parseFloat(savedTime)
+    }
 
     // Try autoplay
     music.play().catch(() => {
-
-        console.log("Autoplay blocked. Waiting for user interaction.")
-
-        // Play on first user interaction
         document.addEventListener("click", () => {
             music.play()
         }, { once: true })
-
     })
+
+    // Save current time continuously
+    setInterval(() => {
+        localStorage.setItem("musicTime", music.currentTime)
+    }, 1000)
 
 })
